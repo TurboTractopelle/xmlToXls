@@ -15,8 +15,9 @@ async function browse() {
       const files = await read(issuePath);
 
       files.forEach(async file => {
-        const filePath = path.join(issuePath, file);
-        const articlePath = path.join(filePath, `${file}.xml`);
+        const articlePath = path
+          .join(issuePath, file)
+          .path.join(filePath, `${file}.xml`);
       });
     });
   });
