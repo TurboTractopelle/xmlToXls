@@ -10,8 +10,14 @@ async function browse() {
     const yearPath = path.join(filesPath, year);
     const issues = await read(yearPath);
 
-    issues.forEach(async issues => {
-      const issuePath = path.join(yearPath, issues);
+    issues.forEach(async issue => {
+      const issuePath = path.join(yearPath, issue);
+      const files = await read(issuePath);
+
+      files.forEach(async file => {
+        const filePath = path.join(issuePath, file);
+        const articlePath = path.join(filePath, `${file}.xml`);
+      });
     });
   });
 }
