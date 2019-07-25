@@ -4,8 +4,9 @@ const path = require("path");
 const convertFile = require("./convertFile");
 
 async function browse() {
-  const articlePath =
-    "C:\\Users\\neroptik\\Desktop\\var\\node\\xmlToXls\\files\\2016\\08\\tsm201610p58\\tsm201610p58.xml";
+  /*  const articlePath =
+    "C:\\Users\\neroptik\\Desktop\\var\\node\\xmlToXls\\files\\2016\\08\\tsm-2016-10\\tsm-2016-10.xml";
+  console.log(await convertFile(articlePath));*/
 
   const filesPath = path.join(__dirname, "../files");
   const years = await read(filesPath);

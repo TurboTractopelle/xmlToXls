@@ -1,7 +1,8 @@
 function convertData(data) {
   const articleType = data.article.$["article-type"];
 
-  let title,
+  let articleRef,
+    title,
     transTitle,
     abstract,
     transAbstract,
@@ -9,6 +10,8 @@ function convertData(data) {
 
   if (articleType === "magazine") {
   } else if (articleType === "research-article") {
+    articleRef = data.article.front[0]["article-meta"][0]["article-id"][1]["_"];
+
     title =
       data.article.front[0]["article-meta"][0]["title-group"][0][
         "article-title"
@@ -33,14 +36,14 @@ function convertData(data) {
     const keywordsEn =
       data.article.front[0]["article-meta"][0]["kwd-group"][1]["kwd"];
 
-    const articleRef =
-      data.article.front[0]["article-meta"][0]["article-id"][1]["_"];*/
+
+
     /*const addresses = data.article.front[0]["article-meta"][0]["aff"].map(
     (addr, i) => addr["addr-line"][0] //addr["label"][0]:
   );*/
   }
 
-  return { title };
+  return { articleRef, title };
 }
 
 module.exports = convertData;
