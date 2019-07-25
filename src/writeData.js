@@ -1,8 +1,8 @@
 const json2xls = require("json2xls");
 const fs = require("fs");
 
-function writeData() {
-  var jsonArr = [
+function writeData(data) {
+  /*var jsonArr = [
     {
       foo: "bar",
       qux: "moo",
@@ -15,8 +15,8 @@ function writeData() {
       poo: 345,
       stux: new Date()
     }
-  ];
-  var xls = json2xls(jsonArr);
+  ];*/
+  var xls = json2xls(data);
   fs.writeFileSync("data.xlsx", xls, "binary");
 }
 
