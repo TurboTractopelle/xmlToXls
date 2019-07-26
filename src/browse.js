@@ -4,17 +4,11 @@ const path = require("path");
 const convertFile = require("./convertFile");
 
 async function browse() {
-	/*  const articlePath =
-    "C:\\Users\\neroptik\\Desktop\\var\\node\\xmlToXls\\files\\2016\\08\\tsm-2016-10\\tsm-2016-10.xml";
-  console.log(await convertFile(articlePath));*/
+	/*const articlePath =
+		"C:\\Users\\gdrouen\\Desktop\\dev\\xmlToXls\\files\\2007\\04\\tsm200704p33\\tsm200704p33.xml";
+	console.log(await convertFile(articlePath));*/
+	//await convertFile(articlePath);
 
-	const articlePath =
-		"C:\\Users\\gdrouen\\Desktop\\dev\\xmlToXls\\files\\2007\\02\\tsm200702p21\\tsm200702p21.xml";
-
-	console.log(await convertFile(articlePath));
-	//Promise.resolve(await convertFile(articlePath));
-
-	/*
 	const filesPath = path.join(__dirname, "../files");
 
 	const years = await read(filesPath);
@@ -47,8 +41,7 @@ async function browse() {
 				});
 			})
 		]).then(allYears => res(allYears));
-  });
-  */
+	});
 }
 
 module.exports = browse;

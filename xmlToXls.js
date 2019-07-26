@@ -15,9 +15,9 @@ Object.defineProperty(Array.prototype, "flat", {
 async function exportData() {
 	return new Promise(async (res, err) => {
 		const dataYears = await browse();
-		//const articlesArr = dataYears.flat(3);
-		//await writeData(articlesArr);
-		//res("DONE - File created");
+		const articlesArr = dataYears.flat(3);
+		await writeData(articlesArr);
+		res("DONE - File created");
 	});
 }
 
