@@ -1,8 +1,9 @@
 const json2xls = require("json2xls");
 const fs = require("fs");
+const path = require("path");
 
 function writeData(data) {
-  /*var jsonArr = [
+	/*var jsonArr = [
     {
       foo: "bar",
       qux: "moo",
@@ -16,8 +17,9 @@ function writeData(data) {
       stux: new Date()
     }
   ];*/
-  var xls = json2xls(data);
-  fs.writeFileSync("data.xlsx", xls, "binary");
+	var xls = json2xls(data);
+	const filePath = path.join(__dirname, "../output");
+	fs.writeFileSync(`${filePath}\\data.xlsx`, xls, "binary");
 }
 
 module.exports = writeData;
