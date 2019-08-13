@@ -9,6 +9,7 @@ function convertData(data) {
 		affiliations,
 		keywordsFr,
 		keywordsEn,
+		abstract,
 		transAbstract = "";
 
 	let authorsAffilliations = [];
@@ -159,6 +160,20 @@ function convertData(data) {
 		keywordsEn = data.article.front[0]["article-meta"][0]["kwd-group"][1]["kwd"].join(", ");
 	}
 
+	// abstract
+	if (
+		data.article.front[0]["article-meta"][0]["abstract"] &&
+		data.article.front[0]["article-meta"][0]["abstract"][0] &&
+		data.article.front[0]["article-meta"][0]["abstract"][0]["p"] &&
+		data.article.front[0]["article-meta"][0]["abstract"][0]["p"][0]
+	) {
+		if (data.article.front[0]["article-meta"][0]["abstract"][0]["p"][0]["_"]) {
+			abstract = data.article.front[0]["article-meta"][0]["abstract"][0]["p"][0]["_"];
+		} else {
+			abstract = data.article.front[0]["article-meta"][0]["abstract"][0]["p"][0];
+		}
+	}
+
 	// transAbstract
 	if (
 		data.article.front[0]["article-meta"][0]["trans-abstract"] &&
@@ -187,6 +202,7 @@ function convertData(data) {
 		affiliations,
 		keywordsFr,
 		keywordsEn,
+		abstract,
 		transAbstract
 	};
 }
